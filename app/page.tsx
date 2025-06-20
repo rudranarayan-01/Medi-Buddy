@@ -2,6 +2,7 @@
 
 
 import { motion } from "motion/react";
+import { FeatureBentoGrid } from "./_components/FeatureBentoGrid";
 
 export default function Home() {
   return (
@@ -98,6 +99,7 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
+      <FeatureBentoGrid/>
     </div>
   );
 }
@@ -115,3 +117,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
+
