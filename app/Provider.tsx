@@ -19,7 +19,7 @@ function Provider({
 
   const { user } = useUser();
 
-  const [userDetail, setUserDetail] = useState<any>
+  const [userDetail, setUserDetail] = useState<any>();
 
   useEffect(() => {
     user && CreateNewUser();
