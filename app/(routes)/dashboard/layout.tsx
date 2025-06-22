@@ -8,8 +8,10 @@ function DashboardLayout({
 }>) {
     return (
         <div>
-            <AppHeader/>
-            {children}
+            <AppHeader />
+            <div className='px-10 md:px-20 lg:px-40 py-10'>
+                {children}
+            </div>
         </div>
     )
 }
