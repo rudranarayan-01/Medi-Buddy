@@ -4,22 +4,22 @@ import React from 'react'
 
 const menuOptions = [
   {
-    id:1,
+    id: 1,
     name: "Home",
     path: "/home"
   },
   {
-    id:2,
+    id: 2,
     name: "Histroy",
     path: "/history"
   },
   {
-    id:3,
+    id: 3,
     name: "Pricing",
     path: "/pricing"
   },
   {
-    id:4,
+    id: 4,
     name: "Profile",
     path: "/profile"
   },
@@ -29,17 +29,21 @@ const menuOptions = [
 function AppHeader() {
   return (
     <div className='flex items-center justify-between p-4 shadow px-10 md:px-20 lg:px-40'>
-      <Image src={"/logo.svg"} alt='header logo' height={120} width={180} />
+      <div className='flex items-center justify-center gap-1'>
+        <Image src={"/logo.svg"} alt='header logo' height={40} width={40} />
+        <h2 className='font-bold text-3xl text-blue-500'>Medi-Buddy</h2>
+      </div>
+
       <div className=' hidden md:flex gap-12 items-center'>
-        {menuOptions.map((option, index)=>(
+        {menuOptions.map((option, index) => (
           <div key={index}>
-            <h2 className='hover:font-bold cursor-pointer transition-all' >{option.name}</h2>
+            <h2 className='font-bold cursor-pointer transition-all text-lg text-blue-500 uppercase hover:text-blue-400' >{option.name}</h2>
           </div>
         ))}
       </div>
-      <UserButton/>
+      <UserButton />
     </div>
   )
 }
- 
+
 export default AppHeader 
