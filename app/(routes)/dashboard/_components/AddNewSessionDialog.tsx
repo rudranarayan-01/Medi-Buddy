@@ -18,7 +18,7 @@ import { ArrowRightIcon } from 'lucide-react'
 function AddNewSessionDialog() {
   const [note, setNote] = useState<string>();
   const[loading, setloading] = useState(false);
-  
+   
   return (
     <Dialog>
       <DialogTrigger>
