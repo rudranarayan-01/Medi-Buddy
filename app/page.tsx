@@ -80,7 +80,7 @@ export default function Home() {
 
           </motion.div>
         </Link>
-        <motion.div
+        <motion.div 
           initial={{
             opacity: 0,
             y: 10,
