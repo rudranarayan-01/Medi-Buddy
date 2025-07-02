@@ -16,20 +16,36 @@ import { Textarea } from '@/components/ui/textarea'
 import { ArrowRightIcon } from 'lucide-react'
 import DoctorAgentCard,{doctorAgent} from './DoctorAgentCard';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function AddNewSessionDialog() {
   const [note, setNote] = useState<string>();
   const[loading, setloading] = useState(false);
-  const [suggestedDoctor, setSuggestedDoctor]  = useState<doctorAgent>
-  const [selectedDoctor, setSelectedDoctor] = useState<doctorAgent>
-
+  const [suggestedDoctor, setSuggestedDoctor]  = useState<doctorAgent | undefined>(undefined)
+  const [selectedDoctor, setSelectedDoctor] = useState<doctorAgent | undefined>(undefined)
+  const router = useRouter();
   const onClickNext = async() =>{
     setloading(true);
     const result = await axios.post("/api/suggest-doctors/",{notes:note});
 
     console.log(result.data);
     setSuggestedDoctor(result.data);
-    
+    setloading(false);
+  }
+
+  const onStartConsultation = async() => {
+    setloading(true);
+    // Save all into database
+    const result = await axios.post("/api/session-chat", {
+      notes: note,
+      doctorId: selectedDoctor
+    });
+    console.log(result.data);
+    if(result.data?.sessionId){
+      console.log("Session started with ID: ", result.data.sessionId);
+      // Redirect to the session page
+    }
+    setloading(false);
 
   }
 
