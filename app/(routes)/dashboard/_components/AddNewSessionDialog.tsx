@@ -14,7 +14,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ArrowRightIcon } from 'lucide-react'
-
+import DoctorAgentCard,{doctorAgent} from './DoctorAgentCard';
 
 function AddNewSessionDialog() {
   const [note, setNote] = useState<string>();
