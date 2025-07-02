@@ -15,11 +15,12 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ArrowRightIcon } from 'lucide-react'
 
+
 function AddNewSessionDialog() {
   const [note, setNote] = useState<string>();
   const[loading, setloading] = useState(false);
-  
-  
+  const [suggestedDoctor, setSuggestedDoctor]  = useState<doctorAgent>
+
   return (
     <Dialog>
       <DialogTrigger>
