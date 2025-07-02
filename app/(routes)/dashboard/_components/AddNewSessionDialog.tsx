@@ -44,7 +44,7 @@ function AddNewSessionDialog() {
     if(result.data?.sessionId){
       console.log("Session started with ID: ", result.data.sessionId);
       // Redirect to the conversation session page
-      router.push(`/dashboard/medical-agent/${result.data.sessionId}`);
+      router.push('/dashboard/medical-agent/'+result.data.sessionId);
     }
     setloading(false);
 
