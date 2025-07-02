@@ -8,7 +8,7 @@ function MedicalVoiceAgent() {
 
   useEffect(() => {
     sessionId && getSessionInfo();
-  }, [sessionId])
+  }, [sessionId]) 
 
   const getSessionInfo = async () => {
     const result = await axios.get("/api/session-chat?sessionId=" + sessionId);
