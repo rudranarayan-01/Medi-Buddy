@@ -15,11 +15,23 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ArrowRightIcon } from 'lucide-react'
 import DoctorAgentCard,{doctorAgent} from './DoctorAgentCard';
+import axios from 'axios';
 
 function AddNewSessionDialog() {
   const [note, setNote] = useState<string>();
   const[loading, setloading] = useState(false);
   const [suggestedDoctor, setSuggestedDoctor]  = useState<doctorAgent>
+  const [selectedDoctor, setSelectedDoctor] = useState<doctorAgent>
+
+  const onClickNext = async() =>{
+    setloading(true);
+    const result = await axios.post("/api/suggest-doctors/",{notes:note});
+
+    console.log(result.data);
+    setSuggestedDoctor(result.data);
+    
+
+  }
 
   return (
     <Dialog>
