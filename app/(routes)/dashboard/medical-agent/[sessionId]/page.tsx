@@ -14,7 +14,6 @@ type SessionDetail = {
   report: JSON,
   selectedDoctor: doctorAgent,
   createdOn: string,
-
 }
 
 function MedicalVoiceAgent() {
