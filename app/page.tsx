@@ -1,6 +1,5 @@
 "use client";
 
-
 import { motion } from "motion/react";
 import { FeatureBentoGrid } from "./_components/FeatureBentoGrid";
 import { UserButton, useUser } from "@clerk/nextjs";

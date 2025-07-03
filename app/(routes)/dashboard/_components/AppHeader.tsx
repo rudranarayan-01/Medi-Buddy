@@ -1,5 +1,6 @@
 import { UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const menuOptions = [
@@ -29,10 +30,12 @@ const menuOptions = [
 function AppHeader() {
   return (
     <div className='flex items-center justify-between p-4 shadow px-10 md:px-20 lg:px-40'>
-      <div className='flex items-center justify-center gap-1'>
-        <Image src={"/logo.svg"} alt='header logo' height={40} width={40} />
-        <h2 className='font-bold text-3xl text-blue-500'>Medi-Buddy</h2>
-      </div>
+      <Link href={"/"}>
+        <div className='flex items-center justify-center gap-1'>
+          <Image src={"/logo.svg"} alt='header logo' height={40} width={40} />
+          <h2 className='font-bold text-3xl text-blue-500'>Medi-Buddy</h2>
+        </div>
+      </Link>
 
       <div className=' hidden md:flex gap-12 items-center'>
         {menuOptions.map((option, index) => (
