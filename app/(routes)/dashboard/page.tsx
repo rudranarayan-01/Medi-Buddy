@@ -12,7 +12,6 @@ const Dashboard = () => {
         <AddNewSessionDialog/>
       </div>
       <HistoryList/>
-
       <DoctorsAgentList/>
     </div>
   )
